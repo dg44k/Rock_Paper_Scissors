@@ -26,60 +26,87 @@ function computerPlay() {
 function playerPlay() {
     let choosePlayer;
     
-    // choosePlayer = prompt("Choose rock or paper or scissors: ")
-
-    // if (choosePlayer.toLowerCase() == (rock || paper || scissors)) {
-    //     return choosePlayer;
-        
-    // } else {
-    //     console.log("Error");
-    //     playerPlay();
-    // }
-
     do {
         choosePlayer = prompt("Choose rock or paper or scissors: ").toLowerCase();
-        console.log(choosePlayer);
-    } 
-    while (choosePlayer != rock && choosePlayer != paper && choosePlayer != scissors);
+    } while (choosePlayer != rock && choosePlayer != paper && choosePlayer != scissors);
     
     return choosePlayer;
 }
+
+let player;
+
+//Five rounds
+function game(){
+    let string;
+    let prowerka;
+    let countComputer = 0, countPlayer = 0;
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = playerPlay();
+        let computerSelection = computerPlay();
+        prowerka = playRound(playerSelection, computerSelection);
+        if (prowerka == 1) {
+            countPlayer += 1;
+            countComputer += 0;
+        } 
+        else if(prowerka == 0){
+            countPlayer += 0;
+            countComputer += 1;
+        }
+        else if(prowerka == 2){
+            countPlayer += 0;
+            countComputer += 0;
+        }
+        string = `Computer - ${countComputer}: User - ${countPlayer}`;
+        console.log(string);
+    }
+    
+    string = `Final: Computer - ${countComputer}: User - ${countPlayer}`;
+    return string;
+}
+
+console.log(game());
+
 
 
 
 //The function round
 function playRound(playerSelection, computerSelection) {
+
     if(playerSelection == rock && computerSelection == paper){
-        return "You Lose! Paper beats Rock";
+        console.log("You Lose! Paper beats Rock");
+        return player = 0;
     }
     else if(playerSelection == paper && computerSelection == rock){
-        return "You Win! Paper beats Rock";
+        console.log("You Win! Paper beats Rock");
+        return player = 1;
     }
     else if(playerSelection == rock && computerSelection == rock){
-        return "Dead Heat!";
+        console.log("Dead Heat!");
+        return player = 2;
     }
     else if(playerSelection == paper && computerSelection == paper){
-        return "Dead Heat!";
+        console.log("Dead Heat!");
+        return player = 2;
     }
     else if(playerSelection == rock && computerSelection == scissors){
-        return "You Win! Rock beats Scissors";
+        console.log("You Win! Rock beats Scissors");
+        return player = 1;
     }
     else if(playerSelection == scissors && computerSelection == rock){
-        return "You Lose! Rock beats Scissors";
+        console.log("You Lose! Rock beats Scissors");
+        return player = 0;
     }
     else if(playerSelection == scissors && computerSelection == scissors){
-        return "Dead Heat!";
+        console.log("Dead Heat!");
+        return player = 2;
     }
     else if(playerSelection == paper && computerSelection == scissors){
-        return "You Lose! Scissors beats Paper";
+        console.log("You Lose! Scissors beats Paper");
+        return player = 0;
     }
     else if(playerSelection == scissors && computerSelection == paper){
-        return "You Win! Scissors beats Paper";
+        console.log("You Win! Scissors beats Paper");
+        return player = 1;
     }
 }
 
-
-
-const playerSelection = playerPlay();
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
