@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+
+body{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 400;
+    background-color: #788E73;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.heading{
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 600;
+    font-size: 74px;
+}
+.content{
+    flex: 1 0 auto;
+}
+    
+.score{
+    font-weight: 500;
+    font-size: 48px;
+    margin-left: 120px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+.card{
+    width: 300px;
+    background-color: #C9CAA5;
+    font-size: 36px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 30px;
+    transition: .3s;
+}
+
+.card:hover{
+    background-color: #a7a88d;
+}
+
+.card_pct{
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+footer{
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #EEDA8C;
+    height: 60px;
+    overflow: hidden;
+}
+
+.icon > a > img{
+    width: 50px;
+    height: 50px;
+}
+
+.icon:hover{
+    transform: rotateZ(360deg);
+    transition: .5s;
+}
