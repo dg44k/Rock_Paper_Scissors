@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+    
 <title>Rock_Paper_Scissors</title>
 </head>
 <body>
@@ -17,19 +17,21 @@
 
     <div class="content">
       
-        <div class="score">Score: <span class="score_man"></span> : <span class="score_pc"></span></div>
+        <div class="score">You - <span class="score_man">0</span><br>
+                           Computer - <span class="score_pc">0</span>
+        </div>
 
         <div class="cards">
 
-            <div class="card">
+            <div class="card card_rock">
                 ROCK<br>
                 <img class = "card_pct" src="img/rock.png" alt="rock">
             </div>
-            <div class="card">
+            <div class="card card_paper">
                 PAPER<br>
                 <img class = "card_pct" src="img/paper.png" alt="paper">
             </div>
-            <div class="card">
+            <div class="card card_scissors">
                 SCISSORS<br>
                 <img class = "card_pct" src="img/scissors.png" alt="scissors">
             </div>
@@ -55,4 +57,5 @@
         </div>
     </footer>
 </body>
+    <script src="script.js"></script>
 </html>
