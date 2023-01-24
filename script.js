@@ -5,7 +5,9 @@ const scissors = "scissors";
 const btn_rock = document.querySelector('.card_rock');
 const btn_paper = document.querySelector('.card_paper');
 const btn_scissors = document.querySelector('.card_scissors');
-const notification = document.querySelector('.notification');
+const notification = document.querySelector(".notification");
+const newBtn = document.querySelector(".newBtn");
+
 
 //The function that implements the computer's move
 function computerPlay() {
@@ -29,16 +31,19 @@ let num = 0;
 let pcChoose;
 
 btn_rock.addEventListener('click', () => {
+    if(newBtn.style.visibility == "visible") return 0;
     pcChoose = computerPlay();
     num = playRound(rock, pcChoose);
     game(num);
 });
 btn_paper.addEventListener('click', ()  => {
+    if(newBtn.style.visibility == "visible") return 0;
     pcChoose = computerPlay();
     num = playRound(paper, computerPlay());
     game(num);
 });
 btn_scissors.addEventListener('click', () => {
+    if(newBtn.style.visibility == "visible") return 0;
     pcChoose = computerPlay();
     num = playRound(scissors, computerPlay());
     game(num);
@@ -63,14 +68,19 @@ function game(num){
 
     }
     if(countPlayer == 5 || countPC == 5){
-        if(countPlayer == 5) alert("You Win!");
-        else alert("PC Win!");
+        if(countPlayer == 5) notification.textContent = "You Win! The Game end.";
+        else notification.textContent = "PC Win! The Game end.";
 
-        countPC = 0, countPlayer = 0;
-        score_pc.textContent = countPC;
-        score_man.textContent = countPlayer; 
-        notification.textContent = "";
+        newBtn.style.visibility = "visible";
+        
     }
+    newBtn.addEventListener('click', () => {
+            countPC = 0, countPlayer = 0;
+            score_pc.textContent = countPC;
+            score_man.textContent = countPlayer; 
+            notification.textContent = "";
+            newBtn.style.visibility = "hidden";
+        });
     
 }
 

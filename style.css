@@ -79,6 +79,7 @@ footer{
     background-color: #EEDA8C;
     height: 60px;
     overflow: hidden;
+    margin-top: 25px;
 }
 
 .icon > a > img{
@@ -89,4 +90,17 @@ footer{
 .icon:hover{
     transform: rotateZ(360deg);
     transition: .5s;
+}
+
+.newBtn{
+    display: block;
+    margin: 25px auto;
+    visibility: hidden;
+    cursor: pointer;
+    padding: 20px 40px;
+    font-size: 18px;
+    border-radius: 18px;
+    color: black;
+    background-color:#C9CAA5;
+    border: none;
 }
