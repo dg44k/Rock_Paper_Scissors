@@ -27,12 +27,18 @@ body{
     flex: 1 0 auto;
 }
     
-.score{
+.score, .notification{
     font-weight: 500;
     font-size: 48px;
     margin-left: 120px;
     margin-bottom: 50px;
     margin-top: 50px;
+}
+
+.panel{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
 }
 
 .cards{
