@@ -57,24 +57,19 @@ function game(num){
 
     }
 
-    if(countPC == 5){
-        countPC = 0, countPlayer = 0;
-        score_pc.textContent = countPC;
-        score_man.textContent = countPlayer;
-        return alert("PC Win!");
-    }
-    
     if(num == 1){
         countPlayer += 1;
         score_man.textContent = countPlayer;
 
     }
-    if(countPlayer == 5){
+    if(countPlayer == 5 || countPC == 5){
+        if(countPlayer == 5) alert("You Win!");
+        else alert("PC Win!");
+
         countPC = 0, countPlayer = 0;
-        score_man.textContent = countPlayer;
         score_pc.textContent = countPC;
-        return alert("You Win!");
-        
+        score_man.textContent = countPlayer; 
+        notification.textContent = "";
     }
     
 }
